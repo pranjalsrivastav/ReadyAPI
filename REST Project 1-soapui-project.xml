@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="4c418254-44f4-4d14-8730-1deac8ec5b1c" activeEnvironment="Default" name="REST Project 1" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" encryptionMode="Not encrypted" updated="3.8.1 2021-05-25T17:56:21Z" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="f87538ab-e578-423f-8cf6-8311206009a2" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://petstore.swagger.io" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>https://petstore.swagger.io</con:endpoint></con:endpoints><con:resource name="Pet" path="/v2/pet" id="63e76b40-4f7e-424f-917f-8a12af7d4404"><con:settings/><con:parameters/><con:method name="Pet 1" id="f9136822-2ef5-4c46-a80f-ab2cb64479c5" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:pet="https://petstore.swagger.io/v2/pet">pet:Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1" id="90afdda4-e014-4b9e-b0a9-1970ecf8306d" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request>{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "string"
+  },
+  "name": "doggie",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}</con:request><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="69a142cd-ce7a-491b-8cd3-c732d0c732e3" name="https://petstore.swagger.io TestSuite"><con:description>TestSuite generated for REST Service [https://petstore.swagger.io]</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="255d39b4-653e-453a-8e03-92dc5603fb40" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Pet TestCase" searchProperties="true"><con:description>TestCase generated for REST Resource [Pet] located at [/v2/pet]</con:description><con:settings/><con:testStep type="restrequest" name="Request 1" id="96a39a50-b739-4f9c-bfb5-deb6bf10bd77"><con:settings/><con:config service="https://petstore.swagger.io" resourcePath="/v2/pet" methodName="Pet 1" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Request 1" id="90afdda4-e014-4b9e-b0a9-1970ecf8306d" mediaType="application/json"><con:settings/><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request/><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script" id="972a314e-516f-4b20-b0f0-a39133d687e5"><con:settings/><con:config><script/></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:testSuite id="5f8ac712-e705-41f2-8bbb-1ee7c51a9c40" name="Positive_TestCase"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="a80dc39f-1aeb-42d8-ad7a-46759eecdae3" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TestCase 1" searchProperties="true"><con:settings/><con:testStep type="groovy" name="Groovy Script" id="f6805825-794c-4588-8471-cde71c46ea4d"><con:settings/><con:config><script>def a =10
+log.info a
+a="amit"
+log.info a
+a = "123"
+log.info a
+
+0.upto(4)
+{log.info"$it"}
+
+String[] arr = ["amit","mridang","Praveen"]
+for(i=0;i&lt;3;i++)
+{
+    log.info arr[i]
+}
+arr[1] = "preeti"
+for(i=0;i&lt;3;i++)
+{
+    log.info arr[i]
+}</script></con:config></con:testStep><con:testStep type="groovy" name="Groovy Script1" id="8d3cc8ac-70ae-4bcb-957b-4a7406344992"><con:settings/><con:config><script>import java.io.File
+import jxl.*
+//read excelfile
+Workbook wb = Workbook.getWorkbook(new File('C:/Users/PranjalRanjan/Desktop/SDET_IBM/TestData_Groovy.xls'))
+sheet = wb.getSheet(0)
+//log.info sheet.getRows()
+//
+//log.info sheet.getColumns()
+   for (int i=1; i&lt;sheet.getRows();i++) {
+    for (int j=0; j&lt;sheet.getColumns(); j++){
+           p=sheet.getCell(j,i).getContents()   //column and row
+     log.info p
+       }
+   }
+wb.close()</script></con:config></con:testStep><con:testStep type="properties" name="Properties" id="857251da-93d2-4b27-a9d3-5e124828f3c7"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>ID</con:name><con:value>1243</con:value></con:property><con:property><con:name>first_Name</con:name><con:value>Pranjal4</con:value></con:property><con:property><con:name>last_Name</con:name><con:value>Ranjan4</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="restrequest" name="Create_Pet" id="9a27f102-1d07-4dc4-8a15-dc3d74ba7a7b"><con:settings/><con:config service="https://petstore.swagger.io" methodName="Pet 1" resourcePath="/v2/pet" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Create_Pet" id="0f900315-f3bf-4323-8d65-2b64dbdff47a" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://petstore.swagger.io</con:endpoint><con:request>{
+  "id": 0,
+  "category": {
+    "id": 0,
+    "name": "${Properties#first_Name}"
+  },
+  "name": "${Properties#last_Name}",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 0,
+      "name": "string"
+    }
+  ],
+  "status": "available"
+}</con:request><con:originalUri>https://petstore.swagger.io/v2/pet</con:originalUri><con:credentials><con:selectedAuthProfile>No Authorization</con:selectedAuthProfile><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:testStep type="groovy" name="getandsetProperty" id="0daed46c-9718-4920-8dfd-c35983ac4549"><con:settings/><con:config><script>import java.io.File
+import jxl.*
+import groovy.json.JsonSlurper
+//read excelfile
+Workbook wb = Workbook.getWorkbook(new File('C:/Users/PranjalRanjan/Desktop/SDET_IBM/TestData_Groovy.xls'))
+sheet = wb.getSheet(0)
+for(i=1;i&lt;sheet.getRows();i++)
+{
+ p=sheet.getCell(0,i).getContents()   //column and row
+ q=sheet.getCell(1,i).getContents() 
+ log.info p
+ log.info q
+testRunner.testCase.getTestStepByName("Properties").setPropertyValue("first_Name",p)
+testRunner.testCase.getTestStepByName("Properties").setPropertyValue("Last_Name",q)
+testRunner.testCase.testSuite.project.testSuites["Positive_TestCase"].testCases["TestCase 1"].testSteps["Create_Pet"].run(testRunner,context)   //executing the post request
+def responsebody = context.testCase.getTestStepByName("Create_Pet").getPropertyValue("response")
+slurperResponse = new JsonSlurper().parseText(responsebody)
+log.info slurperResponse.id
+}</script></con:config></con:testStep><con:properties/><con:reportParameters/></con:testCase><con:properties/><con:reportParameters/></con:testSuite><con:properties/><con:wssContainer/><con:databaseConnectionContainer/><con:jmsConnectionContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:reporting><con:xmlTemplates/><con:parameters/></con:reporting><con:authRepository/><con:tags/></con:soapui-project>
